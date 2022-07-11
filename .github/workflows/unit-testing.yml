@@ -7,7 +7,7 @@ on:
       - '*'
 
 jobs:
-  build:
+  tests:
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
@@ -24,14 +24,14 @@ jobs:
         with:
           python-version: '3.10'
 
-    - name: Cache Blender release download
-      uses: actions/cache@v3.0.4
-      with:
-        path: ${{ env.BLENDER_CACHE }}
-        key: ubuntu-blender-${{ matrix.blender-version }}
-    
-    - name: Install dependencies
-      run: pip install -r requirements.txt
+      - name: Cache Blender release download
+        uses: actions/cache@v3.0.4
+        with:
+          path: ${{ env.BLENDER_CACHE }}
+          key: ubuntu-blender-${{ matrix.blender-version }}
+      
+      - name: Install dependencies
+        run: pip install -r requirements.txt
 
-    - name: Run tests
-      run: python -m scripts.run_tests.py -b ${{ matrix.blender-version }}
+      - name: Run tests
+        run: python -m scripts.run_tests.py -b ${{ matrix.blender-version }}
