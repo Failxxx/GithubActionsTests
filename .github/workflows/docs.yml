@@ -51,8 +51,9 @@ jobs:
         run: make html
 
       - name: Zip build
-        run: cp -r docs/_build/html build_docs
-        run: zip -r build_docs build_docs
+        run: |
+          cp -r docs/_build/html build_docs
+          zip -r build_docs build_docs
 
       - uses: actions/upload-artifact@v3.1.0
         with:
