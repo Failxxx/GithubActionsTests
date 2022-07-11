@@ -51,8 +51,8 @@ jobs:
 
       - name: Build documentation
         run: |
+          cd docs
           make html
-          cd ..
 
       - name: Zip build
         run: |

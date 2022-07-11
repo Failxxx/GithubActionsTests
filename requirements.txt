@@ -1,3 +1,4 @@
+wheel
 pyvista >= 0.35.1
 pytest
 blender-addon-tester
