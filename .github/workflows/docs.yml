@@ -91,4 +91,3 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./build_docs
-          cname: docs.githubactionstests.org
