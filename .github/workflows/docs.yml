@@ -45,10 +45,14 @@ jobs:
           key: docs-_build-${{ hashFiles('docs/source/conf.py') }}
 
       - name: Check spelling
-        run: make spelling
+        run: |
+          cd docs
+          make spelling
 
       - name: Build documentation
-        run: make html
+        run: |
+          make html
+          cd ..
 
       - name: Zip build
         run: |
