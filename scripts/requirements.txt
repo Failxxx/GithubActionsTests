@@ -1,0 +1,5 @@
+numpy
+pytest
+matplotlib
+pyvista >= 0.35.0
+blender-addon-tester

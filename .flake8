@@ -1,0 +1,10 @@
+[flake8]
+max-line-length = 120
+exclude = .git,.pytest_cache,.vscode,cache,docs,__pycache__,addon/**/__init__.py
+ignore =
+    # Imported but unused
+    F401,
+    # Module level import not at top of file
+    E402,
+    # Redefinition of unused module
+    F811,
