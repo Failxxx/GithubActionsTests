@@ -44,6 +44,7 @@ except Exception:
 # Import utils functions
 from blender_addon_tester.addon_helper import zip_addon, change_addon_dir, install_addon, cleanup
 
+
 # Setup class for PyTest
 class SetupPlugin:
     """Setup class for pytest."""
@@ -55,6 +56,7 @@ class SetupPlugin:
         Args:
             addon (sstr): absolute path to the addon (zip file)
         """
+
         self.root = Path(__file__).parent.parent
         self.addon = addon
         self.addon_dir = "local_addon"
@@ -86,7 +88,7 @@ class SetupPlugin:
 
         cleanup(self.addon, self.bpy_module, self.addon_dir)
         cleanup(self.addon, os.environ.get("STOP_MOTION_OBJ_MODULE", None), self.addon_dir)
-        
+
         # Cleanup zip files
         print("Cleaning up - zip files")
         remove_files_matching_pattern(self.root, exclude_folders=[os.path.abspath("./cache")], pattern="*.zip")

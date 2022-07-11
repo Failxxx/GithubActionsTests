@@ -15,7 +15,7 @@ on:
 
 env:
   USE_CACHE: ${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.cache == 'true') || (github.event_name == 'pull_request') }}
-  DEPLOY: ${{ startsWith(github.ref, 'refs/tags') }}
+  DEPLOY: ${{ github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags') }}
 
 jobs:
 
@@ -87,6 +87,10 @@ jobs:
 
       - name: Unzip build
         run: unzip build_docs.zip
+
+      - name: Deploy on main (dev)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: echo "Deploy dev documentation"
 
       - name: Deploy on release
         if: startsWith(github.ref, 'refs/tags')

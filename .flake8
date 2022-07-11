@@ -8,3 +8,5 @@ ignore =
     E402,
     # Redefinition of unused module
     F811,
+    # Double quotes found but single quotes preferred
+    Q000

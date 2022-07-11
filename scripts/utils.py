@@ -35,6 +35,7 @@ def get_centered_message(message: str, char: str = "-") -> str:
     Returns:
         str: generated line
     """
+
     terminal_size = shutil.get_terminal_size((80, 20))
     return message.center(terminal_size.columns, char)
 
@@ -146,6 +147,7 @@ def download_stop_motion_obj_addon(dest: str, version: str = "v2.2.0.alpha.22") 
     Returns:
         tuple[str, str]: path to the zip file, name of the module.
     """
+
     module_name = "Stop-motion-OBJ"
     filename = module_name + "-" + version + ".zip"
     path = os.path.abspath(os.path.join(dest, filename))
