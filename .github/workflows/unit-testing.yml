@@ -2,11 +2,13 @@ name: Unit testing
 on:
   pull_request: # Run in pull requests
 
-  workflow_dispatch:
+  workflow_dispatch: # Allow to run this workflow manually
   
-  push: # Run when a new release is created
-    tags:
+  push:
+    tags: # Run when a new release is created
       - '*'
+    branches: # Run when there is a push to main
+      - 'main'
 
 jobs:
   Unit-testing:
