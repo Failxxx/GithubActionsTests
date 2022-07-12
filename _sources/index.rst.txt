@@ -12,4 +12,4 @@ Add-on
 
    test
 
-NEW VERSION!!
+This is a new version!
