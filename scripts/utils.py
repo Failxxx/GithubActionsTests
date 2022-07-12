@@ -141,9 +141,6 @@ def download_stop_motion_obj_addon(dest: str, version: str = "v2.2.0.alpha.22") 
         dest (str): destination of the downloaded file.
         version (str, optional): version to download. Defaults to "v2.2.0.alpha.22".
 
-    Raises:
-        AttributeError: if the given destination does not exist.
-
     Returns:
         tuple[str, str]: path to the zip file, name of the module.
     """
@@ -153,7 +150,9 @@ def download_stop_motion_obj_addon(dest: str, version: str = "v2.2.0.alpha.22") 
     path = os.path.abspath(os.path.join(dest, filename))
 
     if (not os.path.exists(dest)):
-        raise AttributeError("The given path does not exist:", dest)
+        print(f"The given path does not exist: {dest}")
+        os.mkdir(dest)
+        print("Created destination folder")
 
     if (os.path.exists(os.path.join(dest, filename))):
         print("Stop-Motion-OBJ - found:", path)
