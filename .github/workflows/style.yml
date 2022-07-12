@@ -5,6 +5,8 @@ on:
   workflow_dispatch: # Allow to run this workflow manually
   
   push:
+    tags: # Run when a new release is created
+      - '*'
     branches: # Run when there is a push to main
       - 'main'
 
