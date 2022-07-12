@@ -2,16 +2,16 @@ name: Build documentation
 on:
   pull_request: # Run in pull requests
 
-  push: # Run when a new release is created
-    tags:
-      - '*'
-
   workflow_dispatch: # Allow to run this workflow manually
     inputs:
       cache:
         description: 'Use build cache'
         required: false
         default: "true"
+
+  push: # Run when a new release is created
+    tags:
+      - '*'
 
 env:
   USE_CACHE: ${{ (github.event_name == 'workflow_dispatch' && github.event.inputs.cache == 'true') || (github.event_name == 'pull_request') }}

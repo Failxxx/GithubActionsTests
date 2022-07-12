@@ -1,7 +1,9 @@
 name: Style check
 on:
   pull_request: # Run in pull requests
+
   workflow_dispatch:
+  
   push: # Run when a new release is created
     tags:
       - '*'
