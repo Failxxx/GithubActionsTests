@@ -16,9 +16,3 @@ def test_versionID_pass(bpy_module):  # noqa: D103
     expect_version = (0, 0, 1)
     return_version = get_version(bpy_module)
     assert expect_version == return_version
-
-
-def test_versionID_fail(bpy_module):  # noqa: D103
-    expect_version = (0, 1, 1)
-    return_version = get_version(bpy_module)
-    assert not expect_version == return_version
