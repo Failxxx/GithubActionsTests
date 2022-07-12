@@ -11,3 +11,5 @@ Add-on
    :glob:
 
    test
+
+NEW VERSION!!

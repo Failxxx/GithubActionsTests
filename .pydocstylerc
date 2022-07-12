@@ -13,3 +13,9 @@ ignore =
     D212,
     # 1 blank line required before class docstring
     D203,
+    # Missing dashed underline after section
+    D407,
+    # Missing blank line after last section
+    D413,
+    # Section name should end with a newline
+    D406,
